@@ -22,7 +22,7 @@ typedef struct
 {
 	char * name;
 	jsmntype_t jtype;
-	int index; //If array the index of the item
+	int index; //If array, the index of the item
 } item_t;
 
 /*
@@ -35,7 +35,7 @@ void printItem(void *param);
 void freeItem(item_t *item);
 int parseJSON(char *jsonMsg, jsmn_parser *parser, jsmntok_t **jsmnTokenArray);
 _Bool nextToken(jsmntok_t **jsmnToken);
-_Bool prevToken(jsmntok_t **jsonToken);
+_Bool prevToken(jsmntok_t **jsmnToken);
 _Bool lastToken(jsmntok_t *jsmnToken);
 _Bool jumpToTokenPos(jsmntok_t **jsonToken, int newPosition);
 void printJsmnToken(char *jsonMsg, jsmntok_t *jsmnToken);

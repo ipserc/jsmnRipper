@@ -83,9 +83,9 @@ void freeItem(item_t * item)
 /**
  * Main call to JSMN parser. A previous call to this function is required to use findJsonToken and getTokenValue.
  * jsmn_parse parses the JSON message and put it into an array of tokens.
- * jsonTokens points the beginning of the array.
+ * jsmnTokenArray points the beginning of the array.
  * The last item of the array is a "0" token, so we can control when we have reached the end of the array if we get a "0" of jsmntok_t type.
- * Once you have finished using the jsonTokens array, you have to free it.
+ * Once you have finished using the jsmnTokenArray array, you have to free it.
  */
 int parseJSON(char * jsonMsg, jsmn_parser * parser, jsmntok_t ** jsmnTokenArray)
 {
@@ -104,28 +104,28 @@ int parseJSON(char * jsonMsg, jsmn_parser * parser, jsmntok_t ** jsmnTokenArray)
 }
 
 /**
- * Structural Function. Jumps to the next token pointed by jsonToken
+ * Structural Function. Jumps to the next token pointed by jsmnToken
  * Returns false in case next token were the null token which marks the end of the array, otherwise, it returns true.
  * If jsmnToken is the NULL token, no jump to the next token is done. The pointer remains at the NULL token.
  */
 bool nextToken(jsmntok_t ** jsmnToken)
 {
-	jsmntok_t * jsmnTokInt = *jsmnToken;
-	if (!(jsmnTokInt->start + jsmnTokInt->end + jsmnTokInt->size + jsmnTokInt->parent)) return false;
+	jsmntok_t * token = *jsmnToken;
+	if (!(token->start + token->end + token->size + token->parent)) return false;
 	++(*jsmnToken);
-	jsmnTokInt = *jsmnToken;
-	return (jsmnTokInt->start + jsmnTokInt->end + jsmnTokInt->size + jsmnTokInt->parent);
+	token = *jsmnToken;
+	return (token->start + token->end + token->size + token->parent);
 }
 /**
- * Structural Function. Jumps to the previous token pointed by jsonToken
+ * Structural Function. Jumps to the previous token pointed by jsmnToken
  * Returns false in case previous token were outside of the start of the array
  * Otherwise, returns true.
  */
-bool prevToken(jsmntok_t ** jsonToken)
+bool prevToken(jsmntok_t ** jsmnToken)
 {
-	jsmntok_t * token = *jsonToken;
+	jsmntok_t * token = *jsmnToken;
 	if (--token->start == 0) return false;
-	--(*jsonToken);
+	--(*jsmnToken);
 	return true;
 }
 
@@ -281,7 +281,7 @@ jsmntok_t * findJsmnToken(char * tpath, char * jsonMsg, jsmntok_t * jsmnTokenArr
 		free(tokenPath);
 		listDestroy(tokenList, (void *)freeItem);
 	}
-	else printf("WARNING: Unable to generate token path list.\n");
+	//else WARNING("%s", "Unable to generate token path list.");
 	return jsmnTokenFound;
 }
 
