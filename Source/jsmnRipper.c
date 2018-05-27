@@ -281,7 +281,7 @@ jsmntok_t * findJsmnToken(char * tpath, char * jsonMsg, jsmntok_t * jsmnTokenArr
 		free(tokenPath);
 		listDestroy(tokenList, (void *)freeItem);
 	}
-	else WARNING("%s", "Unable to generate token path list.");
+	else printf("%s", "Unable to generate token path list.\n");
 	return jsmnTokenFound;
 }
 
