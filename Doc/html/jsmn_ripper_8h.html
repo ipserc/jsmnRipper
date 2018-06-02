@@ -66,6 +66,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">jsmnRipper.h File Reference</div>  </div>
@@ -81,6 +82,13 @@ $(function() {
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitem__t.html">item_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1c6d5de492ac61ad29aec7aa9a436bbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jsmn_ripper_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf">VERSION</a>&#160;&#160;&#160;&quot;1.2&quot;</td></tr>
+<tr class="separator:a1c6d5de492ac61ad29aec7aa9a436bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95dfd2336ffecbde0cd51147ae054013"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jsmn_ripper_8h.html#a95dfd2336ffecbde0cd51147ae054013">COMPILATION</a>&#160;&#160;&#160;&quot;2018-06-02&quot;</td></tr>
+<tr class="separator:a95dfd2336ffecbde0cd51147ae054013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -115,6 +123,39 @@ Functions</h2></td></tr>
 <tr class="memitem:aa146d4303f25ace326abbaa2c729a82d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jsmn_ripper_8h.html#aa146d4303f25ace326abbaa2c729a82d">getTokenValue</a> (char *tpath, char *jsonMsg, jsmntok_t *jsmnTokenArray)</td></tr>
 <tr class="separator:aa146d4303f25ace326abbaa2c729a82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a95dfd2336ffecbde0cd51147ae054013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95dfd2336ffecbde0cd51147ae054013">&#9670;&nbsp;</a></span>COMPILATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPILATION&#160;&#160;&#160;&quot;2018-06-02&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8h_source.html#l00016">16</a> of file <a class="el" href="jsmn_ripper_8h_source.html">jsmnRipper.h</a>.</p>
+
+</div>
+</div>
+<a id="a1c6d5de492ac61ad29aec7aa9a436bbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c6d5de492ac61ad29aec7aa9a436bbf">&#9670;&nbsp;</a></span>VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VERSION&#160;&#160;&#160;&quot;1.2&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8h_source.html#l00015">15</a> of file <a class="el" href="jsmn_ripper_8h_source.html">jsmnRipper.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="af80c78749642b5d1336c4b65b32c911c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af80c78749642b5d1336c4b65b32c911c">&#9670;&nbsp;</a></span>findJsmnEngine()</h2>
@@ -184,7 +225,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Finds the token mapped in the string path. Path should be expressed in the form "field1.field2.field3(index3). ... .fieldN" Returns the token found or NULL if the token doesn't exist. </p>
+<p>Finds the token mapped in the string path. Path should be expressed in the form "field1.field2[index2].field3[index3]. ... .fieldN" Returns the token found or NULL if the token doesn't exist. </p>
 
 <p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00269">269</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 

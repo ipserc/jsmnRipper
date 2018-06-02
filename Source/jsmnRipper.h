@@ -12,6 +12,9 @@
 #include </opt/include/jsmn.h>
 #include </opt/include/errtra.h>
 
+#define VERSION "1.2"
+#define COMPILATION "2018-06-02"
+
 /**
  * Item structure which stores the string path token in a linked list-
  * name is the token name which indicates a field of the JSON message

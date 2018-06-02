@@ -263,13 +263,13 @@ jsmntok_t * findJsmnEngine(list_t * tokenList, char * jsonMsg, jsmntok_t * jsmnT
 
 /**
  * Finds the token mapped in the string path.
- * Path should be expressed in the form "field1.field2.field3(index3). ... .fieldN"
+ * Path should be expressed in the form "field1.field2[index2].field3[index3]. ... .fieldN"
  * Returns the token found or NULL if the token doesn't exist.
  */
 jsmntok_t * findJsmnToken(char * tpath, char * jsonMsg, jsmntok_t * jsmnTokenArray)
 {
 	list_t * tokenList;
-	jsmntok_t * jsmnTokenFound = false;
+	jsmntok_t * jsmnTokenFound = (jsmntok_t *)NULL;
 	char * tokenPath = malloc(strlen(tpath)+1);
 
 	sprintf(tokenPath, "%s", tpath);
