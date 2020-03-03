@@ -188,9 +188,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Structural Function. Finds the token mapped in the path kept in the list tokenList. Returns the token found or NULL if the token couldn't be found or doesn't exist. </p>
+<p>Structural Function. Finds the token mapped in the path kept in the list tokenList. Returns the token found or NULL if the token couldn't be found or doesn't exist. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tokenList</td><td>list_t* </td></tr>
+    <tr><td class="paramname">jsonMsg</td><td>char* </td></tr>
+    <tr><td class="paramname">jsmnTokenArray</td><td>jsmntok_t* </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the token found or NULL if the token couldn't be found or doesn't exist </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00187">187</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00217">217</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -225,9 +233,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Finds the token mapped in the string path. Path should be expressed in the form "field1.field2[index2].field3[index3]. ... .fieldN" Returns the token found or NULL if the token doesn't exist. </p>
+<p>Finds the token mapped in the string path. Path should be expressed in the form "field1.field2[index2].field3[index3]. ... .fieldN" Returns the token found or NULL if the token doesn't exist. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tpath</td><td>char* </td></tr>
+    <tr><td class="paramname">jsonMsg</td><td>char* </td></tr>
+    <tr><td class="paramname">jsmnTokenArray</td><td>jsmntok_t* </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>jsmntok_t* the token found or NULL if not found </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00269">269</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00303">303</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -246,9 +262,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Structural Function. Frees the allocated memory for "name" in the <a class="el" href="structitem__t.html">item_t</a> structure </p>
+<p>Structural Function. Frees the allocated memory for "name" in the <a class="el" href="structitem__t.html">item_t</a> structure </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>item_t* </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00076">76</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00083">83</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -267,9 +288,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Structural Function. Gets the length of the token pointed by jsmnToken. </p>
+<p>Structural Function. Gets the length of the token pointed by jsmnToken. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsmnToken</td><td>jsmntok_t* </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Token length </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00019">19</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00021">21</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -304,9 +331,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Finds the token mapped in the string path. Path should be expressed in the form "field1.field2[index2].field3[index3]. ... .fieldN" Returns the VALUE token found which is the next token in the sequence of the tokens array. Returns an NULL string if the token couldn't be found. </p>
+<p>Finds the token mapped in the string path. Path should be expressed in the form "field1.field2[index2].field3[index3]. ... .fieldN" Returns the VALUE token found which is the next token in the sequence of the tokens array. Returns a NULL string if the token couldn't be found. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tpath</td><td>char* </td></tr>
+    <tr><td class="paramname">jsonMsg</td><td>char* </td></tr>
+    <tr><td class="paramname">jsmnTokenArray</td><td>jsmntok_t* </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* the VALUE token found or NULL if not found </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00294">294</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00332">332</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -335,9 +370,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Structural Function. Jumps to the token which starts at the next position given by newPosition. </p>
+<p>Structural Function. Jumps to the token which starts at the next position given by newPosition. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonToken</td><td>jsmntok_t** </td></tr>
+    <tr><td class="paramname">newPosition</td><td>int </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false (0) if there aren't any more tokens, true (any number) if there are one more </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00144">144</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00164">164</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -356,9 +398,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Structural Function. Checks if the token pointed by jsonToken is the last token of the tokens array. Returns TRUE if the token pointed by jsonToken is the last. </p>
+<p>Structural Function. Checks if the token pointed by jsonToken is the last token of the tokens array. Returns TRUE if the token pointed by jsonToken is the last. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsmnToken</td><td>jsmntok_t** </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if is the last token, false if not </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00136">136</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00153">153</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -387,9 +435,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Structural Function. Transforms the token path from string format to an item of <a class="el" href="structitem__t.html">item_t</a> type. Appends the item found in linked list of items. </p>
+<p>Structural Function. Transforms the token path from string format to an item of <a class="el" href="structitem__t.html">item_t</a> type. Appends the item found in linked list of items. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tokenList</td><td>list_t* </td></tr>
+    <tr><td class="paramname">tpath</td><td>char* token path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the number of tokens in the list </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00028">28</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00033">33</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -408,9 +463,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Structural Function. Jumps to the next token pointed by jsmnToken Returns false in case next token were the null token which marks the end of the array, otherwise, it returns true. If jsmnToken is the NULL token, no jump to the next token is done. The pointer remains at the NULL token. </p>
+<p>Structural Function. Jumps to the next token pointed by jsmnToken Returns false in case next token were the null token which marks the end of the array, otherwise, it returns true. If jsmnToken is the NULL token, no jump to the next token is done. The pointer remains at the NULL token. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsmnToken</td><td>jsmntok_t** </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false (0) if there aren't any more tokens, true (any number) if there are one more </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00111">111</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00124">124</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -445,9 +506,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Main call to JSMN parser. A previous call to this function is required to use findJsonToken and getTokenValue. jsmn_parse parses the JSON message and put it into an array of tokens. jsmnTokenArray points the beginning of the array. The last item of the array is a "0" token, so we can control when we have reached the end of the array if we get a "0" of jsmntok_t type. Once you have finished using the jsmnTokenArray array, you have to free it. </p>
+<p>Main call to JSMN parser. A previous call to this function is required to use findJsonToken and getTokenValue. jsmn_parse parses the JSON message and put it into an array of tokens. jsmnTokenArray points the beginning of the array. The last item of the array is a "0" token, so we can control when we have reached the end of the array if we get a "0" of jsmntok_t type. Once you have finished using the jsmnTokenArray array, you have to free it. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonMsg</td><td>char* </td></tr>
+    <tr><td class="paramname">parser</td><td>jsmn_parser* </td></tr>
+    <tr><td class="paramname">jsmnTokenArray</td><td>jsmntok_t** </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>tokenCount int number of tokens </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00090">90</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00101">101</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -466,9 +535,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Structural Function. Jumps to the previous token pointed by jsmnToken Returns false in case previous token were outside of the start of the array Otherwise, returns true. </p>
+<p>Structural Function. Jumps to the previous token pointed by jsmnToken Returns false in case previous token were outside of the start of the array Otherwise, returns true. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsmnToken</td><td>jsmntok_t** </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false if there aren't a previous token, true if there are a previous one </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00124">124</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00139">139</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -487,9 +562,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Structural Function. Prints the info stored in the item. It is useful for debugging purposes </p>
+<p>Structural Function. Prints the info stored in the item. It is useful for debugging purposes </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>void* an item </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00063">63</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00069">69</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -518,9 +598,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Structural Function. Prints the token value and the start, end, size, type, and parent values of an specific token pointed by jsonToken </p>
+<p>Structural Function. Prints the token value and the start, end, size, type, and parent values of an specific token pointed by jsonToken </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonMsg</td><td>char* </td></tr>
+    <tr><td class="paramname">jsmnToken</td><td>jsmntok_t* </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00154">154</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00176">176</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -549,9 +635,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Structural Function. Prints the information of all the tokens of the parsed JSON. </p>
+<p>Structural Function. Prints the information of all the tokens of the parsed JSON. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonMsg</td><td>char* </td></tr>
+    <tr><td class="paramname">jsmnTokenArray</td><td>jsmntok_t* </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00165">165</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00189">189</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
@@ -580,9 +672,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Structural Function. For an specific token prints the value store in its next token. </p>
+<p>Structural Function. For an specific token prints the value store in its next token. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonMsg</td><td>char* </td></tr>
+    <tr><td class="paramname">jsmnToken</td><td>jsmntok_t* </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00178">178</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="jsmn_ripper_8c_source.html#l00204">204</a> of file <a class="el" href="jsmn_ripper_8c_source.html">jsmnRipper.c</a>.</p>
 
 </div>
 </div>
