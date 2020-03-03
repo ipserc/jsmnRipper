@@ -15,6 +15,8 @@
 
 /**
  * Structural Function. Gets the length of the token pointed by jsmnToken.
+ * @param jsmnToken jsmntok_t*
+ * @return Token length
  */
 int getJsmnTokenLen(jsmntok_t * jsmnToken)
 {
@@ -24,6 +26,9 @@ int getJsmnTokenLen(jsmntok_t * jsmnToken)
 /**
  * Structural Function. Transforms the token path from string format to an item of item_t type.
  * Appends the item found in linked list of items.
+ * @param tokenList list_t*
+ * @param tpath char* token path
+ * @return the number of tokens in the list
  */
 int listTokenCreate(list_t * tokenList, char * tpath)
 {
@@ -59,6 +64,7 @@ int listTokenCreate(list_t * tokenList, char * tpath)
 /**
  * Structural Function. Prints the info stored in the item.
  * It is useful for debugging purposes
+ * @param param void* an item
 */
 void printItem(void * param)
 {
@@ -72,6 +78,7 @@ void printItem(void * param)
 
 /**
  * Structural Function. Frees the allocated memory for "name" in the item_t structure
+ * @param item item_t*
  */
 void freeItem(item_t * item)
 {
@@ -86,6 +93,10 @@ void freeItem(item_t * item)
  * jsmnTokenArray points the beginning of the array.
  * The last item of the array is a "0" token, so we can control when we have reached the end of the array if we get a "0" of jsmntok_t type.
  * Once you have finished using the jsmnTokenArray array, you have to free it.
+ * @param jsonMsg char*
+ * @param parser jsmn_parser*
+ * @param jsmnTokenArray jsmntok_t**
+ * @return tokenCount int number of tokens
  */
 int parseJSON(char * jsonMsg, jsmn_parser * parser, jsmntok_t ** jsmnTokenArray)
 {
@@ -107,6 +118,8 @@ int parseJSON(char * jsonMsg, jsmn_parser * parser, jsmntok_t ** jsmnTokenArray)
  * Structural Function. Jumps to the next token pointed by jsmnToken
  * Returns false in case next token were the null token which marks the end of the array, otherwise, it returns true.
  * If jsmnToken is the NULL token, no jump to the next token is done. The pointer remains at the NULL token.
+ * @param jsmnToken jsmntok_t**
+ * @return false (0) if there aren't any more tokens, true (any number) if there are one more
  */
 bool nextToken(jsmntok_t ** jsmnToken)
 {
@@ -120,6 +133,8 @@ bool nextToken(jsmntok_t ** jsmnToken)
  * Structural Function. Jumps to the previous token pointed by jsmnToken
  * Returns false in case previous token were outside of the start of the array
  * Otherwise, returns true.
+ * @param jsmnToken jsmntok_t**
+ * @return false if there aren't a previous token, true if there are a previous one
  */
 bool prevToken(jsmntok_t ** jsmnToken)
 {
@@ -132,6 +147,8 @@ bool prevToken(jsmntok_t ** jsmnToken)
 /**
  * Structural Function. Checks if the token pointed by jsonToken is the last token of the tokens array.
  * Returns TRUE if the token pointed by jsonToken is the last.
+ * @param jsmnToken jsmntok_t**
+ * @return true if is the last token, false if not
  */
 bool lastToken(jsmntok_t * jsmnToken)
 {
@@ -140,6 +157,9 @@ bool lastToken(jsmntok_t * jsmnToken)
 
 /**
  * Structural Function. Jumps to the token which starts at the next position given by newPosition.
+ * @param jsonToken jsmntok_t**
+ * @param newPosition int
+ * @return false (0) if there aren't any more tokens, true (any number) if there are one more
  */
 bool jumpToTokenPos(jsmntok_t ** jsonToken, int newPosition)
 {
@@ -150,6 +170,8 @@ bool jumpToTokenPos(jsmntok_t ** jsonToken, int newPosition)
 
 /**
  * Structural Function. Prints the token value and the start, end, size, type, and parent values of an specific token pointed by jsonToken
+ * @param jsonMsg char*
+ * @param jsmnToken jsmntok_t*
  */
 void printJsmnToken(char * jsonMsg, jsmntok_t * jsmnToken)
 {
@@ -161,6 +183,8 @@ void printJsmnToken(char * jsonMsg, jsmntok_t * jsmnToken)
 
 /**
  * Structural Function. Prints the information of all the tokens of the parsed JSON.
+ * @param jsonMsg char*
+ * @param jsmnTokenArray jsmntok_t*
  */
 void printJsmnTokens(char * jsonMsg, jsmntok_t * jsmnTokenArray)
 {
@@ -174,6 +198,8 @@ void printJsmnTokens(char * jsonMsg, jsmntok_t * jsmnTokenArray)
 
 /**
  * Structural Function. For an specific token prints the value store in its next token.
+ * @param jsonMsg char*
+ * @param jsmnToken jsmntok_t*
  */
 void printJsmnTokenValue(char * jsonMsg, jsmntok_t * jsmnToken)
 {
@@ -183,6 +209,10 @@ void printJsmnTokenValue(char * jsonMsg, jsmntok_t * jsmnToken)
 /**
  * Structural Function. Finds the token mapped in the path kept in the list tokenList.
  * Returns the token found or NULL if the token couldn't be found or doesn't exist.
+ * @param tokenList list_t*
+ * @param jsonMsg char*
+ * @param jsmnTokenArray jsmntok_t*
+ * @return the token found or NULL if the token couldn't be found or doesn't exist
  */
 jsmntok_t * findJsmnEngine(list_t * tokenList, char * jsonMsg, jsmntok_t * jsmnTokenArray)
 {
@@ -265,6 +295,10 @@ jsmntok_t * findJsmnEngine(list_t * tokenList, char * jsonMsg, jsmntok_t * jsmnT
  * Finds the token mapped in the string path.
  * Path should be expressed in the form "field1.field2[index2].field3[index3]. ... .fieldN"
  * Returns the token found or NULL if the token doesn't exist.
+ * @param tpath char*
+ * @param jsonMsg char*
+ * @param jsmnTokenArray jsmntok_t*
+ * @return jsmntok_t* the token found or NULL if not found
  */
 jsmntok_t * findJsmnToken(char * tpath, char * jsonMsg, jsmntok_t * jsmnTokenArray)
 {
@@ -278,10 +312,10 @@ jsmntok_t * findJsmnToken(char * tpath, char * jsonMsg, jsmntok_t * jsmnTokenArr
 	if (listTokenCreate(tokenList, tokenPath))
 	{
 		jsmnTokenFound = findJsmnEngine(tokenList, jsonMsg, jsmnTokenArray);
-		free(tokenPath);
 		listDestroy(tokenList, (void *)freeItem);
 	}
 	//else WARNING("%s", "Unable to generate token path list.");
+	free(tokenPath);
 	return jsmnTokenFound;
 }
 
@@ -289,7 +323,11 @@ jsmntok_t * findJsmnToken(char * tpath, char * jsonMsg, jsmntok_t * jsmnTokenArr
  * Finds the token mapped in the string path.
  * Path should be expressed in the form "field1.field2[index2].field3[index3]. ... .fieldN"
  * Returns the VALUE token found which is the next token in the sequence of the tokens array.
- * Returns an NULL string if the token couldn't be found.
+ * Returns a NULL string if the token couldn't be found.
+ * @param tpath char*
+ * @param jsonMsg char*
+ * @param jsmnTokenArray jsmntok_t*
+ * @return char* the VALUE token found or NULL if not found
  */
 char * getTokenValue(char * tpath, char * jsonMsg, jsmntok_t * jsmnTokenArray)
 {
