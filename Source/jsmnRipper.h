@@ -12,10 +12,9 @@
 #include </opt/include/jsmn.h>
 #include </opt/include/errtra.h>
 
-#define VERSION "1.2"
-#define COMPILATION "2018-06-02"
-
-/**
+#define VERSION "1.3"
+#define COMPILATION "2021-09-16"
+/*
  * Item structure which stores the string path token in a linked list-
  * name is the token name which indicates a field of the JSON message
  * jtype is the JSMN type of the token (JSMN_OBJECT or JSMN_ARRAY)
@@ -25,7 +24,7 @@ typedef struct
 {
 	char * name;
 	jsmntype_t jtype;
-	int index; //If array, the index of the item
+	int index; //If array the index of the item
 } item_t;
 
 /*
